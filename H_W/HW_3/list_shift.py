@@ -2,6 +2,8 @@ def move_last_to_first_short(input_list):
     if len(input_list) <= 1:
         return input_list
     return input_list[-1:] + input_list[:-1]
+
+
 list_a = [1, 2, 3, 4, 5]
 list_b = [6, 7, 8, 9, 10]
 list_c = [11, 12, 13, 14, 15]
