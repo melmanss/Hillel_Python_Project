@@ -1,6 +1,5 @@
-def calculator():
-    print("Калькулятор")
 
+def calculator(num1, operation, num2):
     operation_map = {
         '+': lambda a, b: a + b,
         '-': lambda a, b: a - b,
@@ -8,27 +7,32 @@ def calculator():
         '/': lambda a, b: a / b,
     }
 
+    if operation not in operation_map:
+        return "ПОМИЛКА: Неправильна операція."
+
+    if operation == '/' and num2 == 0:
+        return "ПОМИЛКА: Ділення на нуль неможливе."
+
     try:
-        num1 = float(input("Введіть перше число: "))
-        operation = input("Введіть операцію (+, -, *, /): ").strip()
-        num2 = float(input("Введіть друге число: "))
-
-        if operation not in operation_map:
-            print("ПОМИЛКА: Неправильна операція.")
-            return
-
-        if operation == '/' and num2 == 0:
-            print("ПОМИЛКА: Ділення на нуль неможливе.")
-            return
-
-        result = operation_map[operation](num1, num2)
-
-        print(f"\nРезультат: {num1} {operation} {num2} = {result}")
-
-    except ValueError:
-        print("ПОМИЛКА: Введено некоректне число.")
+        return operation_map[operation](num1, num2)
     except Exception as e:
-        print(f"Сталася невідома помилка: {e}")
+        return f"ПОМИЛКА: Сталася невідома помилка: {e}"
 
 
-calculator()
+print("Калькулятор")
+
+try:
+    input_num1 = float(input("Введіть перше число: "))
+    input_operation = input("Введіть операцію (+, -, *, /): ").strip()
+    input_num2 = float(input("Введіть друге число: "))
+
+    final_result = calculator(input_num1, input_operation, input_num2)
+
+    if isinstance(final_result, str) and final_result.startswith("ПОМИЛКА"):
+        print(final_result)
+    else:
+        print(f"\nРезультат: {input_num1} {input_operation} "
+              f"{input_num2} = {final_result}")
+
+except ValueError:
+    print("ПОМИЛКА: Введено некоректне число.")
