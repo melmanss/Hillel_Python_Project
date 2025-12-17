@@ -1,9 +1,5 @@
 def checkio(data: list) -> int:
-    if not data:
-        return 0
-
-    sum_even_indices = sum(data[::2])
-    return sum_even_indices * data[-1]
+    return data and sum(data[::2]) * data[-1] or 0
 
 
 test_cases = [
