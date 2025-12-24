@@ -1,9 +1,11 @@
 import string
 import keyword
 
+
 def is_valid_variable_name(name):
     if name in keyword.kwlist:
         return False
+
 
     if name[0].isdigit():
         return False
