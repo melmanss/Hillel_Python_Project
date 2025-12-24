@@ -9,7 +9,7 @@ def get_characters_between(range_str: str) -> str:
         range_str (str): Рядок у форматі "літера1-літера2".
 
     Returns:
-        str: Рядок із усіх символів у діапазоні.
+        str: Рядок з усіх символів у діапазоні.
     """
     start_char, end_char = range_str.split("-")
     all_letters = string.ascii_letters
