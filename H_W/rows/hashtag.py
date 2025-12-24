@@ -1,7 +1,16 @@
 import string
 
 
-def create_hashtag(text):
+def create_hashtag(text: str) -> str:
+    """
+    Перетворює вхідний рядок на хештег у форматі CamelCase.
+
+    Args:
+        text (str): Вхідний рядок для обробки.
+
+    Returns:
+        str: Сформований хештег (макс. 140 символів).
+    """
     clean_text = "".join(
         char for char in text if char not in string.punctuation
     )
