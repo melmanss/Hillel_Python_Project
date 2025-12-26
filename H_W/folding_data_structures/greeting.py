@@ -20,8 +20,8 @@ def say_hi(name: str, age: int) -> str:
     greeting: str = f"Hi. My name is {name} and I'm {age} years old"
     return greeting
 
-user_name: str = input("Введіть ваше ім'я: ")
 
+user_name: str = input("Введіть ваше ім'я: ")
 user_age: int = int(input("Введіть ваш вік: "))
 
 print(say_hi(user_name, user_age))
