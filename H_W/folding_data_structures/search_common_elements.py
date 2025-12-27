@@ -1,21 +1,16 @@
-def common_elements() -> set:
+def common_elements() -> set[int]:
     """
     Генерує два списки чисел у діапазоні до 100: кратні 3 та кратні 5.
     Знаходить спільні елементи для обох списків.
 
     Returns:
-        set: Множина чисел, які одночасно кратні й 3, і 5.
+        set[int]: Множина чисел, які є спільними кратними.
     """
-    list_multiples_of_3 = [i for i in range(100) if i % 3 == 0]
-    list_multiples_of_5 = [i for i in range(100) if i % 5 == 0]
+    multiples_3: set[int] = {i for i in range(0, 100, 3)}
+    multiples_5: set[int] = {i for i in range(0, 100, 5)}
 
-    set_3 = set(list_multiples_of_3)
-    set_5 = set(list_multiples_of_5)
-
-    intersection = set_3 & set_5
-
-    return intersection
+    return multiples_3 & multiples_5
 
 
-result = common_elements()
+result: set[int] = common_elements()
 print(result)
