@@ -12,9 +12,7 @@ def first_word(text: str) -> str:
     pattern: str = r"[a-zA-Zа-яА'ʼ]+"
     match: Optional[re.Match] = re.search(pattern, text)
 
-    if match:
-        return match.group(0)
-    return ""
+    return match.group(0) if match else ""
 
 
 print(f"{first_word('Hello world')}")
