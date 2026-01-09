@@ -4,8 +4,7 @@ def is_even(num: int) -> bool:
 
     Повертає True, якщо число ділиться на 2 без остачі, і False в іншому випадку.
     """
-    result: bool = num % 2 == 0
-    return result
+    return num % 2 == 0
 
 
 try:
